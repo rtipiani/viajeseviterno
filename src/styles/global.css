@@ -1,3 +1,25 @@
 @import "tailwindcss";
 @import "@fortawesome/fontawesome-free/css/all.min.css";
 /* @import "photoswipe/photoswipe.css"; */
+
+@layer utilities {
+    @keyframes slideshow {
+      0% { opacity: 1; transform: scale(1.05); }
+      25% { opacity: 1; transform: scale(1); }
+      30% { opacity: 0; transform: scale(1); }
+      100% { opacity: 0; transform: scale(1); }
+    }
+  
+    .slideshow-image:nth-child(1) {
+      animation: slideshow 16s infinite 0s;
+    }
+    .slideshow-image:nth-child(2) {
+      animation: slideshow 16s infinite 4s;
+    }
+    .slideshow-image:nth-child(3) {
+      animation: slideshow 16s infinite 8s;
+    }
+    .slideshow-image:nth-child(4) {
+      animation: slideshow 16s infinite 12s;
+    }
+  }

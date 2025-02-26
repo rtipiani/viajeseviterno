@@ -1,8 +1,29 @@
-<section class="relative w-full h-[500px] md:h-[600px] flex items-center justify-center text-white text-center">
+<!-- <section class="relative w-full h-[500px] md:h-[600px] flex items-center justify-center text-white text-center">
     <img src="/banner.png" alt="Paquetes de viajes" class="absolute inset-0 w-full h-full object-cover">
     <div class="absolute inset-0 bg-opacity-30"></div>
     <div class="relative z-10 px-4">
         <h1 class="text-3xl md:text-5xl font-bold">
+            ¡Todo en uno! <br /> 
+            Paquetes, tours, hoteles y vuelos <br /> para tu próxima aventura.
+        </h1>
+    </div>
+</section> -->
+
+<section class="relative w-full h-[500px] md:h-[600px] flex items-center justify-center text-white text-center overflow-hidden">
+    <!-- Contenedor de imágenes con efecto Parallax -->
+    <div class="absolute inset-0 w-full h-full bg-fixed">
+        <div class="absolute inset-0 w-full h-full bg-cover bg-center slideshow-image bg-[url('/banner.png')]"></div>
+        <div class="absolute inset-0 w-full h-full bg-cover bg-center slideshow-image bg-[url('/banner1.png')]"></div>
+        <div class="absolute inset-0 w-full h-full bg-cover bg-center slideshow-image bg-[url('/banner2.png')]"></div>
+        <div class="absolute inset-0 w-full h-full bg-cover bg-center slideshow-image bg-[url('/banner3.png')]"></div>
+    </div>
+
+    <!-- Capa oscura para mejor legibilidad -->
+    <div class="absolute inset-0 bg-black/75 bg-opacity-50"></div>
+
+    <!-- Texto sobre el efecto Parallax -->
+    <div class="relative z-10 px-4">
+        <h1 class="text-3xl md:text-5xl font-bold drop-shadow-lg">
             ¡Todo en uno! <br /> 
             Paquetes, tours, hoteles y vuelos <br /> para tu próxima aventura.
         </h1>
