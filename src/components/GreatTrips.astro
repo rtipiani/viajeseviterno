@@ -1,63 +1,56 @@
 ---
 const destinos = [
-  {
-    titulo: "BIENVENIDOS A EUROPA",
-    dias: "16 días con vuelos",
-    destinos: "ESPAÑA - FRANCIA - ITALIA - SUIZA",
-    precio: "2,959 USD",
-    reserva: "$500 POR PERSONA",
-    imagen: "/tarapoto.png"
-  },
-  {
-    titulo: "TURQUÍA MAGNÍFICA & DUBAI",
-    dias: "14 días con vuelos",
-    destinos: "TURQUÍA - DUBAI",
-    precio: "3,390 USD",
-    reserva: "$500 POR PERSONA",
-    imagen: "/tarapoto.png"
-  },
-  {
-    titulo: "EUROPA FANTÁSTICA",
-    dias: "18 días con vuelos",
-    destinos: "LONDRES - FRANCIA - ALEMANIA - ITALIA - SUIZA - ESPAÑA",
-    precio: "3,559 USD",
-    reserva: "$500 POR PERSONA",
-    imagen: "/tarapoto.png"
-  }
+    {
+        titulo: "EUROPA",
+        dias: "17 días",
+        destinos: "MADRID - BURDEOS - BLOIS - PARÍS - LUCERNA - ZÚRICH - VERONA - VENECIA - FLORENCIA - ROMA -PISA - NIZA - BARCELONA - ZARAGOZA - MADRID",
+        imagen: "/espana.png"
+    },
+    {
+        titulo: "TAILANDIA",
+        dias: "10 días - 09 noches",
+        destinos: "TURQUÍA - DUBAI",
+        imagen: "/tailandia.png"
+    },
+    {
+        titulo: "COSTA RICA",
+        dias: "18 días - 09 noches",
+        destinos: "DE CARIBE A PACÍFICO",
+        imagen: "/costarica.png"
+    }
 ];
 ---
-
 <section class="bg-[#d8f0f7] py-12">
-  <div class="container mx-auto text-center">
-    <h2 class="text-2xl font-bold text-gray-800">Grandes Viajes por el Mundo</h2>
-    <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
-      {destinos.map((destino) => (
-        <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-          <div class="relative">
-            <img src={destino.imagen} alt={destino.titulo} class="w-full h-64 object-cover"/>
-            <div class="absolute top-4 left-4 bg-white px-4 py-2 rounded-lg text-pink-600 font-bold">
-              {destino.dias}
-            </div>
-          </div>
-          <div class="p-4">
-            <h3 class="text-lg font-bold text-pink-600">{destino.titulo}</h3>
-            <p class="text-sm text-gray-600">{destino.destinos}</p>
-            <div class="mt-4 bg-pink-600 text-white px-3 py-1 rounded-md inline-block text-sm font-semibold">
-              PRE-VENTA 2025
-            </div>
-            <div class="mt-2 flex items-center justify-between">
-              <span class="text-gray-800 text-xl font-bold">Desde {destino.precio}</span>
-              <span class="text-gray-600 text-sm">Por persona en hab. doble</span>
-            </div>
-            <div class="mt-2 bg-blue-600 text-white px-4 py-2 rounded-md text-center font-semibold">
-              Reserva ahora {destino.reserva}
-            </div>
-            <button class="mt-4 w-full bg-blue-600 text-white py-2 rounded-lg font-bold">
-              Ver más
-            </button>
-          </div>
+    <div class="container mx-auto text-center">
+        <h2 class="text-2xl font-bold text-gray-800">
+            Grandes viajes, festivales y Eventos deportivos.
+        </h2>
+        <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
+            {destinos.map((destino) => (
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <div class="relative">
+                        <img src={destino.imagen} alt={destino.titulo} class="w-full h-64 object-cover"/>
+                        <div class="absolute top-4 left-4 bg-white px-4 py-2 rounded-lg text-pink-600 font-bold">
+                            {destino.dias}
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold text-pink-600">
+                            {destino.titulo}
+                        </h3>
+                        <p class="text-sm text-gray-600">
+                            {destino.destinos}
+                        </p>
+                        <div class="mt-4 bg-pink-600 text-white px-3 py-1 rounded-md inline-block text-sm font-semibold">
+                            PRE-VENTA 2025
+                        </div>
+                        <button class="mt-4 w-full bg-blue-600 text-white py-2 rounded-lg font-bold">
+                            Reservar ahora
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </button>
+                    </div>
+                </div>
+            ))}
         </div>
-      ))}
     </div>
-  </div>
 </section>
