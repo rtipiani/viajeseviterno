@@ -1,0 +1,132 @@
+---
+const destinations = [
+    {
+        image: "/cartagena.png",
+        title: "EL ENCANTO DE CARTAGENA",
+        description: "Ciudad portuaria en la costa de Colombia. Junto al mar, se encuentra la Ciudad Vieja amurallada,  con plazas, calles de adoquines y edificios coloniales coloridos.",
+        duration: "4D/3N"
+    },
+    {
+        image: "/buenos-aires.png",
+        title: "BUENOS AIRES",
+        description: "La gran capital cosmopolita de Argentina. Su centro es la Plaza de Mayo, rodeada de imponentes edificios del siglo XIX, incluida la Casa Rosada, el icónico palacio presidencial que tiene varios balcones.",
+        duration: "4D/3N"
+    },
+    {
+        image: "/rio-de-janeiro.png",
+        title: "RÍO DE JANEIRO",
+        description: "Río de Janeiro es una enorme ciudad costera de Brasil, famosa por sus playas de Copacabana e Ipanema, la estatua del Cristo Redentor de 38 m de alto sobre el cerro del Corcovado y el morro Pan de Azúcar.",
+        duration: "4D/3N"
+    },
+    {
+        image: "/puntacana.png",
+        title: "PUNTA CANA",
+        description: "Punta Cana, el extremo más oriental de República Dominicana, limita con el mar Caribe y con el océano Atlántico.",
+        duration: "4D/3N"
+    },
+    {
+        image: "/cusco.png",
+        title: "CUSCO MARAVILLOSO",
+        description: "Cuzco es una ciudad de los Andes peruanos que fue la capital del Imperio Inca y es conocida por sus restos arqueológicos y la arquitectura colonial española.",
+        duration: "4D/3N"
+    },
+    {
+        image: "/tarapoto.png",
+        title: "ENCANTO DE TARAPOTO",
+        description: "Tarapoto es una ciudad peruana de la región de San Martín, que se caracteriza por el bosque nuboso amazónico y sus abundantes palmeras.",
+        duration: "4D/3N"
+    },
+    {
+        image: "/iquitos.png",
+        title: "IQUITOS EXPLÉNDIDO",
+        description: "Iquitos es una ciudad puerto peruana y una vía de acceso a los alojamientos en la selva y las villas del norte del Amazonas.",
+        duration: "4D/3N"
+    },
+    {
+        image: "/cajamarca.png",
+        title: "CAJAMARCA HISTÓRICO",
+        description: "La plaza principal histórica, la Plaza de Armas, está rodeada de arquitectura colonial barroca.",
+        duration: "4D/3N"
+    }
+];
+
+const groupedDestinations = [];
+for (let i = 0; i < destinations.length; i += 3) {
+    groupedDestinations.push(destinations.slice(i, i + 3));
+};
+---
+<section class="bg-cyan-900 py-12 px-6">
+    <h2 class="text-white text-2xl md:text-4xl font-bold text-center flex items-center justify-center gap-2">
+        <span class="text-3xl">🔥</span>
+        Tus Destinos Favoritos
+    </h2>
+
+    <div class="relative mt-10 overflow-hidden">
+        <div id="carousel" class="flex transition-transform duration-500 ease-in-out w-full">
+            {groupedDestinations.map((group) => (
+                <div class="flex w-full flex-shrink-0 justify-center gap-6">
+                    {group.map((destino) => (
+                        <div class="w-80 bg-white rounded-2xl overflow-hidden shadow-lg transform transition duration-300 hover:scale-105 flex flex-col h-full">
+                            <img src={destino.image} alt={destino.title} class="w-full h-56 object-cover" />
+                            <div class="p-5 flex flex-col flex-grow">
+                                <h3 class="text-cyan-800 font-bold text-2xl mb-1 text-center">
+                                    {destino.title}
+                                </h3>
+                                <div class="text-cyan-700 text-sm font-semibold py-1 text-center">
+                                    {destino.duration}
+                                </div>
+                                <p class="text-gray-700 leading-relaxed text-sm text-center mb-4">
+                                    {destino.description}
+                                </p>
+                                <button class="mt-auto bg-cyan-900 text-white px-5 py-2 rounded-lg text-sm flex items-center gap-2 justify-center hover:bg-cyan-700 transition">
+                                    Consultar ahora
+                                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                                </button>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            ))}
+        </div>
+
+        <div class="flex justify-center gap-3 mt-6">
+            {groupedDestinations.map((_, index) => (
+                <button class="indicator w-4 h-4 bg-gray-300 rounded-full transition-all duration-300" data-index={index}></button>
+            ))}
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const carousel = document.getElementById("carousel") as HTMLElement;
+        const indicators = document.querySelectorAll(".indicator");
+
+        if (!carousel) {
+            console.error("Error: El elemento #carousel no se encontró en el DOM.");
+            return;
+        }
+
+        let currentIndex = 0;
+        const totalSlides = indicators.length;
+
+        function updateCarousel() {
+            const offset = currentIndex * -100;
+            carousel.style.transform = `translateX(${offset}%)`;
+
+            indicators.forEach((indicator, index) => {
+                indicator.classList.toggle("bg-blue-500", index === currentIndex);
+                indicator.classList.toggle("bg-gray-300", index !== currentIndex);
+            });
+        }
+
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener("click", () => {
+                currentIndex = index;
+                updateCarousel();
+            });
+        });
+
+        updateCarousel();
+    });
+</script>
