@@ -2,24 +2,40 @@
 @import "@fortawesome/fontawesome-free/css/all.min.css";
 /* @import "photoswipe/photoswipe.css"; */
 
-@layer utilities {
-    @keyframes slideshow {
-        0% { opacity: 1; transform: scale(1.05); }
-        25% { opacity: 1; transform: scale(1); }
-        30% { opacity: 0; transform: scale(1); }
-        100% { opacity: 0; transform: scale(1); }
-    }
-  
-    .slideshow-image:nth-child(1) {
-        animation: slideshow 8s infinite 0s;
-    }
-    .slideshow-image:nth-child(2) {
-        animation: slideshow 8s infinite 1s;
-    }
-    .slideshow-image:nth-child(3) {
-        animation: slideshow 8s infinite 3s;
-    }
-    .slideshow-image:nth-child(4) {
-        animation: slideshow 8s infinite 5s;
-    }
+@keyframes slideshow {
+    0% { opacity: 1; transform: scale(1.05); z-index: 1; }
+    40% { opacity: 1; transform: scale(1); z-index: 1; }
+    50% { opacity: 1; z-index: 1; }
+    60% { opacity: 0; z-index: 0; }
+    100% { opacity: 0; z-index: 0; }
+}
+
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.slideshow-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slideshow-image:nth-child(1) {
+    animation: slideshow 8s infinite 0s;
+}
+.slideshow-image:nth-child(2) {
+    animation: slideshow 8s infinite 2s;
+}
+.slideshow-image:nth-child(3) {
+    animation: slideshow 8s infinite 4s;
+}
+.slideshow-image:nth-child(4) {
+    animation: slideshow 8s infinite 6s;
 }
