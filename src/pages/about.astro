@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+<Layout>
+	<Header />
+    <section class="max-w-6xl mx-auto p-8 bg-white dark:bg-gray-900 rounded-lg shadow-lg">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div class="flex justify-center">
+                <img src="/nosotros.jpg" alt="Equipo de Viajes Eviterno" class="w-full max-w-md rounded-lg shadow-md">
+            </div>
+    
+            <div>
+                <h1 class="text-3xl font-bold text-gray-800 dark:text-white mb-5 text-center md:text-left">
+                    Nosotros
+                </h1>
+                <p class="text-gray-700 dark:text-gray-300 text-center md:text-left leading-relaxed">
+                    Somos una empresa dedicada a crear experiencias únicas. Nuestro equipo de profesionales altamente capacitados y apasionados por el turismo trabaja con un solo objetivo: brindarte viajes inolvidables sin comprometer tu presupuesto.
+                </p>
+                <p class="text-gray-700 dark:text-gray-300 text-center md:text-left mt-4 leading-relaxed">
+                    Nos especializamos en servicios turísticos de alta calidad y precios accesibles, asegurando que cada destino supere tus expectativas.
+                </p>
+                <p class="text-gray-700 dark:text-gray-300 text-center md:text-left mt-4 leading-relaxed">
+                    Desde transporte y alojamiento hasta excursiones y actividades personalizadas, llevamos a nuestros clientes a los destinos más fascinantes del mundo con total seguridad y comodidad.
+                </p>
+                <p class="text-gray-700 dark:text-gray-300 text-center md:text-left mt-4 leading-relaxed font-semibold">
+                    En <strong>Viajes Eviterno</strong>, tu satisfacción es nuestra prioridad.
+                </p>
+                <p class="text-gray-700 dark:text-gray-300 text-center md:text-left mt-4 leading-relaxed">
+                    ¡Déjanos hacer de tu próximo viaje una experiencia inolvidable!
+                </p>
+            </div>
+        </div>
+    </section>
+	<Footer />
+</Layout>
